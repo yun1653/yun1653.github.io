@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <style>
+        .output *{box-sizing:border-box;}
+        .output ul{padding-left:0;}
+        .output li{
+            display:block;
+            float:left;
+            width:14.2857%;
+            border:2px solid white;
+            padding:5px;
+            height:40px;
+            background-color:#4A2DB6;
+            color:white;
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div class='output'>
+        <label for="calendar">Select Month: </label>
+        <select id="select">
+            <option value="01">01월</option>
+            <option value="02">02월</option>
+            <option value="03">03월</option>
+            <option value="04">04월</option>
+            <option value="05">05월</option>
+            <option value="06">06월</option>
+            <option value="07">07월</option>
+            <option value="08">08월</option>
+            <option value="09">09월</option>
+            <option value="10">10월</option>
+            <option value="11">11월</option>
+            <option value="12">12월</option>
+        </select>
+        <h1></h1>
+        <ul></ul>
+       </div>
+
+        <script>
+        var select=document.querySelector('select');
+        var list=document.querySelector('ul');
+        var h1=document.querySelector('h1');
+        
+        select.onchange=function(){
+            var choice=select.value;    
+            var days=31;
+            if(choice==='02'){days=28;}
+            else if(choice==='04'|| choice==='06'||choice ==='09'||choice ==='11') {days=30;}
+            createCalendar(days,choice);
+        }
+
+        function createCalendar(days,choice){
+            list.innerHTML='';
+            h1.textContent=choice;
+            for(var i=1;i<=days;i++){
+                var listItem=document.createElement('li');
+                listItem.textContent=i;
+                list.appendChild(listItem);
+            }
+        }
+        </script>
+    </body>
+</html>
