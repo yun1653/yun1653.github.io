@@ -4,4 +4,4 @@
 
 마크다운 문법은 깃헙 위키에서
 
-## [마크다운 문법](http://poorman.tistory.com/328){:target="_blank"}
+## [마크다운 문법](http://poorman.tistory.com/328)
