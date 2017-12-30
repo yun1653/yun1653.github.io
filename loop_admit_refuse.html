@@ -1,0 +1,26 @@
+<html>
+    <head></head>
+    <body>
+        <div>
+        <p class='admit'></p>
+        <p class='refuse'></p>
+        </div>
+
+        <script>
+        var people= ['chris','anne','colin','terry','phil','lora','sam','kay','bruse'];
+        var admitted=document.querySelector('.admit');
+        var refused=document.querySelector('.refuse');
+        admitted.textContent='Admit: ';
+        refused.textContent='Refuse: ';
+        forb(var i=0;i<people.length;i++){
+            if(people[i]==='phil' || people[i]==='lora'){
+                refused.textContent += people[i]+',';
+            } else {
+                admitted.textContent += people[i]+',';
+            }
+        } 
+        refused.textContent=refused.textContent.slice(0,refused.textContent.length-1)+'.';
+        admitted.textContent=admitted.textContent.slice(0,admitted.textContent.length-1)+'.';
+        </script>
+    </body>
+</html>

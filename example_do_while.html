@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='ustf-8'>
+        <title>Basic do...while example</title>
+        <style></style>
+    </head>
+    <body>
+        <h1></h1>
+        <p></p>
+        <script>
+        var cats=['bill','jeff','pete','biggles','jasmin'];
+        var info='My cats are called ';
+        var info_do='My cats are called ';
+        var h1=document.querySelector('h1');
+        var para=document.querySelector('p');
+
+        var i=0;
+        while(i<cats.length){
+            if(i===cats.length-1){
+                info+='and '+cats[i]+'.';
+            } else{
+            info+=cats[i]+',';
+            }
+            i++;
+        }
+        h1.textContent=info;
+
+        var j=0;
+        do{
+            if(j===cats.length-1){
+                info_do += 'and '+cats[j]+'.';
+            }else{info_do += cats[j]+', ';
+            }
+            j++
+        }while(j<cats.length);
+        para.textContent=info_do;
+
+        </script>
+    </body>
+</html>
