@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>이상한 문자 만들기</title>
+</head>
+<body>
+<h1>
+       이상한 문자 만들기.<br/>
+</h1>
+<p>단어의 홀수번째만 대문자로 짝수번째는 소문짜로 만들기<br/>
+문자열 기준이 아닌 단어기준임(즉,공백은 계산에서 제외됨)<br/></p>
+
+
+<label for='name'>몇가지 단어를 입력하세요</label>
+<input class='input'>
+<button class='submit'>결과</button>
+<p class='para'></p>
+
+<script>
+var para=document.querySelector('.para');
+var inputbox=document.querySelector('.input');
+var btn=document.querySelector('.submit');
+
+ function toWeirdCase(s) {
+    var result=[];
+    var word=s.split(' ');
+    var charword=[]; var char;
+    
+    for (var i=0;i<word.length;i++){
+        char=word[i].split('')
+        for(j=0;j<char.length;j++){
+            if(j%2===0){
+                char[j]=char[j].toUpperCase();
+            } else {
+                char[j]=char[j].toLowerCase();
+            }
+                  
+        }
+        charword.push(char.join(''));      
+        }
+    
+        return charword.join(' ');
+ }
+
+
+btn.addEventListener('click',function(){
+    var tem=inputbox.value;
+    var final= toWeirdCase(tem);
+para.textContent= '결과:  '+final;
+})
+</script>
+</body>
+</html>
